@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestAutomationCourse.SimpleTodo.Web.Controllers.Model;
 using TestAutomationCourse.SimpleTodo.Web.Data;
+using TestAutomationCourse.SimpleTodo.Web.Dto;
+using TestAutomationCourse.SimpleTodo.Web.Services;
 
 namespace TestAutomationCourse.SimpleTodo.Web.Controllers
 {
@@ -24,24 +25,19 @@ namespace TestAutomationCourse.SimpleTodo.Web.Controllers
 
         }
         [HttpPost]
-        public IActionResult Create(CreateTodoItemModel model)
+        public IActionResult Create(TodoDto model)
         {
             if (!ModelState.IsValid)
                 return View();
-            context.TodoItems.Add(new Domain.TodoItem
-            {
-                CreationDate = DateTime.Now,
-                Title = model.Title,
-                IsDone = false
-            });
-            context.SaveChanges();
+            var service = new TodoService(context);
+            service.AddTodo(model);
             return RedirectToAction("List");
         }
 
         public IActionResult List()
         {
-            var list = context.TodoItems.ToList();
-            return View(list);
+            var service = new TodoService(context);
+            return View(service.GetAll());
         }
     }
 }
