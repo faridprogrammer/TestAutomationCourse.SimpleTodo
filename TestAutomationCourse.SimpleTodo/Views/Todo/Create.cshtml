@@ -8,15 +8,19 @@
 <div class="row">
     <div class="col-sm-12">
         @using (var form = Html.BeginForm("Create", "Todo", FormMethod.Post))
-        {
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Title</label>
-                <input type="text" name="Title" class="form-control" required id="exampleFormControlInput1" placeholder="">
-            </div>
+    {
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Title</label>
+            <input type="text" name="Title" class="form-control" required id="title" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Due date</label>
+            <input type="date" name="DueDate" class="form-control" required id="date" placeholder="">
+        </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-default">Save</button>
-            </div>
-        }
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>  
+}
     </div>
 </div>

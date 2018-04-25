@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationCourse.SimpleTodo.Web", "TestAutomationCourse.SimpleTodo\TestAutomationCourse.SimpleTodo.Web.csproj", "{473E7647-CD07-49C6-BC95-C4862CE512E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAutomationCourse.SimpleTodo.Tests", "TestAutomationCourse.SimpleTodo.Tests\TestAutomationCourse.SimpleTodo.Tests.csproj", "{84FCBB5F-04B8-4DB4-AE86-534A57C5287A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAutomationCourse.SimpleTodo.Test", "TestAutomationCourse.SimpleTodo.Test\TestAutomationCourse.SimpleTodo.Test.csproj", "{6E4C0B65-4A1E-4259-9722-C758233D4092}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84FCBB5F-04B8-4DB4-AE86-534A57C5287A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84FCBB5F-04B8-4DB4-AE86-534A57C5287A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84FCBB5F-04B8-4DB4-AE86-534A57C5287A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84FCBB5F-04B8-4DB4-AE86-534A57C5287A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

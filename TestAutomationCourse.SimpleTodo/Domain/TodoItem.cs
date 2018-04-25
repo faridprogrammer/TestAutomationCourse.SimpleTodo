@@ -15,5 +15,7 @@ namespace TestAutomationCourse.SimpleTodo.Web.Domain
         public string Title { get; set; }
         public bool IsDone { get; set; }
         public DateTime CreationDate { get; set; }
+        [Required]
+        public DateTime DueDate { get; set; }
     }
 }

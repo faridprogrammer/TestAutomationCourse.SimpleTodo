@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TestAutomationCourse.SimpleTodo.Web.Data;
 using TestAutomationCourse.SimpleTodo.Web.Dto;
+using TestAutomationCourse.SimpleTodo.Web.Dto.Validators;
 
 namespace TestAutomationCourse.SimpleTodo.Web.Services
 {
@@ -20,19 +21,18 @@ namespace TestAutomationCourse.SimpleTodo.Web.Services
             var exists = context.TodoItems.Any(ff => ff.Title.ToLower() == input.Title.ToLower());
             if (exists)
                 throw new InvalidOperationException("Duplicate todo item");
+
+            var validator = new TodoDtoValidator(context);
+            validator.Validate(input);
+
             // refactor to mapper
             var todoEntity = new Domain.TodoItem
             {
                 CreationDate = DateTime.Now,
                 Title = input.Title,
-                IsDone = false
+                IsDone = false,
+                DueDate = input.DueDate
             };
-
-            // refactor to validator or guard
-            var now = DateTime.Now;
-            var todayCount = context.TodoItems.Count(ff => ff.CreationDate.Month == now.Month && ff.CreationDate.Day == now.Day);
-            if (todayCount > 10)
-                throw new InvalidOperationException("Todo item daily limit reached");
 
             context.TodoItems.Add(todoEntity);
             context.SaveChanges();
