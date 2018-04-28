@@ -3,9 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationCourse.SimpleTodo.Web", "TestAutomationCourse.SimpleTodo\TestAutomationCourse.SimpleTodo.Web.csproj", "{473E7647-CD07-49C6-BC95-C4862CE512E5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Phase1", "Phase1", "{6768206C-2C7D-4DEA-BC6F-281AC8ECFE66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAutomationCourse.SimpleTodo.Test", "TestAutomationCourse.SimpleTodo.Test\TestAutomationCourse.SimpleTodo.Test.csproj", "{6E4C0B65-4A1E-4259-9722-C758233D4092}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Phase2", "Phase2", "{0EAE0F0B-6118-4E39-9D63-742FDCF77CBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Phase3", "Phase3", "{55A7D5DF-E4FF-403E-A0C1-70DD05CC2A53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phase1.SimpleTodo.Web", "Phase1\Phase1.SimpleTodo.SimpleTodo\Phase1.SimpleTodo.Web.csproj", "{808B6E09-35D1-41A0-9F5C-B8853DC0B547}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phase1.SimpleTodo.Test", "Phase1\Phase1.SimpleTodo.Test\Phase1.SimpleTodo.Test.csproj", "{EAA67B6E-49B9-4487-A5D6-351A95A179F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phase2.SimpleTodo.Web", "Phase2\Phase2.SimpleTodo\Phase2.SimpleTodo.Web.csproj", "{F0CF995F-481B-41EA-9024-BF5A0A9CC163}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phase2.SimpleTodo.Test", "Phase2\Phase2.SimpleTodo.Test\Phase2.SimpleTodo.Test.csproj", "{D76E032C-B796-45A3-95EB-95709988DDA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phase3.SimpleTodo.Web", "Phase3\Phase3.SimpleTodo\Phase3.SimpleTodo.Web.csproj", "{C9B511AF-7F23-453B-903C-2278F67FFA80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phase3.SimpleTodo.Test", "Phase3\Phase3.SimpleTodo.Test\Phase3.SimpleTodo.Test.csproj", "{A84302DE-716C-4DE1-8B9A-0E50701AC633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,17 +27,41 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{473E7647-CD07-49C6-BC95-C4862CE512E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E4C0B65-4A1E-4259-9722-C758233D4092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{808B6E09-35D1-41A0-9F5C-B8853DC0B547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{808B6E09-35D1-41A0-9F5C-B8853DC0B547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{808B6E09-35D1-41A0-9F5C-B8853DC0B547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{808B6E09-35D1-41A0-9F5C-B8853DC0B547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA67B6E-49B9-4487-A5D6-351A95A179F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA67B6E-49B9-4487-A5D6-351A95A179F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA67B6E-49B9-4487-A5D6-351A95A179F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA67B6E-49B9-4487-A5D6-351A95A179F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0CF995F-481B-41EA-9024-BF5A0A9CC163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0CF995F-481B-41EA-9024-BF5A0A9CC163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0CF995F-481B-41EA-9024-BF5A0A9CC163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0CF995F-481B-41EA-9024-BF5A0A9CC163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76E032C-B796-45A3-95EB-95709988DDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76E032C-B796-45A3-95EB-95709988DDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76E032C-B796-45A3-95EB-95709988DDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76E032C-B796-45A3-95EB-95709988DDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B511AF-7F23-453B-903C-2278F67FFA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B511AF-7F23-453B-903C-2278F67FFA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B511AF-7F23-453B-903C-2278F67FFA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B511AF-7F23-453B-903C-2278F67FFA80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A84302DE-716C-4DE1-8B9A-0E50701AC633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84302DE-716C-4DE1-8B9A-0E50701AC633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84302DE-716C-4DE1-8B9A-0E50701AC633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84302DE-716C-4DE1-8B9A-0E50701AC633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{808B6E09-35D1-41A0-9F5C-B8853DC0B547} = {6768206C-2C7D-4DEA-BC6F-281AC8ECFE66}
+		{EAA67B6E-49B9-4487-A5D6-351A95A179F3} = {6768206C-2C7D-4DEA-BC6F-281AC8ECFE66}
+		{F0CF995F-481B-41EA-9024-BF5A0A9CC163} = {0EAE0F0B-6118-4E39-9D63-742FDCF77CBD}
+		{D76E032C-B796-45A3-95EB-95709988DDA3} = {0EAE0F0B-6118-4E39-9D63-742FDCF77CBD}
+		{C9B511AF-7F23-453B-903C-2278F67FFA80} = {55A7D5DF-E4FF-403E-A0C1-70DD05CC2A53}
+		{A84302DE-716C-4DE1-8B9A-0E50701AC633} = {55A7D5DF-E4FF-403E-A0C1-70DD05CC2A53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F677FF6-F0A0-4548-A47A-7E33ECF9278A}

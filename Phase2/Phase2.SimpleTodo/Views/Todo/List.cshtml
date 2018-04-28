@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TestAutomationCourse.SimpleTodo.Web.Dto.TodoDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<h2>My Todo list</h2>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Done?</td>
+                    <td>Title</td>
+                    <td>Created on</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (item.IsDone)
+                            {
+                                <i class="glyphicon glyphicon-check"></i>
+                            }
+                            else { 
+
+                            }
+                        </td>
+                        <td>@item.Title</td>
+                        <td>@item.CreationDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
