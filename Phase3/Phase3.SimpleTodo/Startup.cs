@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Phase3.SimpleTodo.Web.Services;
 using TestAutomationCourse.SimpleTodo.Web.Data;
 
 namespace TestAutomationCourse.SimpleTodo
@@ -25,6 +26,9 @@ namespace TestAutomationCourse.SimpleTodo
         {
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient(typeof(INotificationService), typeof(NotificationService));
+            services.AddTransient(typeof(ITodoService), typeof(TodoService));
 
             services.AddMvc();
         }

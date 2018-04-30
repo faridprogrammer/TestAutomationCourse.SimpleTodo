@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Phase2.SimpleTodo.Web.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,14 +30,17 @@ namespace TestAutomationCourse.SimpleTodo.Web.Controllers
         {
             if (!ModelState.IsValid)
                 return View();
-            var service = new TodoService(context);
+            var notificationService = new NotificationService();
+            var service = new TodoService(context, notificationService);
             service.AddTodo(model);
             return RedirectToAction("List");
         }
 
         public IActionResult List()
         {
-            var service = new TodoService(context);
+            var notificationService = new NotificationService();
+
+            var service = new TodoService(context, notificationService);
             return View(service.GetAll());
         }
     }

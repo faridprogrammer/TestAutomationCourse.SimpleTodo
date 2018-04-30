@@ -14,7 +14,6 @@ namespace TestAutomationCourse.SimpleTodo.Web.Dto.Validators
         }
         public void Validate(TodoDto input)
         {
-            // refactor to validator or guard
             var now = DateTime.Now;
             var todayCount = context.TodoItems.Count(ff => ff.CreationDate.Month == now.Month && ff.CreationDate.Day == now.Day);
             if (todayCount > 10)

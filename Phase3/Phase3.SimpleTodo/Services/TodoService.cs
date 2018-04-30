@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Phase3.SimpleTodo.Web.Domain;
+using Phase3.SimpleTodo.Web.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,15 +8,21 @@ using TestAutomationCourse.SimpleTodo.Web.Data;
 using TestAutomationCourse.SimpleTodo.Web.Dto;
 using TestAutomationCourse.SimpleTodo.Web.Dto.Validators;
 
-namespace TestAutomationCourse.SimpleTodo.Web.Services
+namespace Phase3.SimpleTodo.Web.Services
 {
-    public class TodoService
+    public interface ITodoService {
+        void AddTodo(TodoDto input);
+        IEnumerable<TodoDto> GetAll();
+    }
+    public class TodoService: ITodoService
     {
         private readonly DataContext context;
+        private readonly INotificationService notificationService;
 
-        public TodoService(DataContext context)
+        public TodoService(DataContext context, INotificationService notificationService)
         {
             this.context = context;
+            this.notificationService = notificationService;
         }
         public void AddTodo(TodoDto input)
         {
@@ -26,7 +34,7 @@ namespace TestAutomationCourse.SimpleTodo.Web.Services
             validator.Validate(input);
 
             // refactor to mapper
-            var todoEntity = new Domain.TodoItem
+            var todoEntity = new TodoItem
             {
                 CreationDate = DateTime.Now,
                 Title = input.Title,

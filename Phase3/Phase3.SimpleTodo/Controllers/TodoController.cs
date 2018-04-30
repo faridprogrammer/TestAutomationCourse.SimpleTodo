@@ -1,21 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Phase3.SimpleTodo.Web.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TestAutomationCourse.SimpleTodo.Web.Data;
 using TestAutomationCourse.SimpleTodo.Web.Dto;
-using TestAutomationCourse.SimpleTodo.Web.Services;
 
-namespace TestAutomationCourse.SimpleTodo.Web.Controllers
+namespace Phase3.SimpleTodo.Web.Controllers
 {
     public class TodoController : Controller
     {
         private readonly DataContext context;
+        private readonly ITodoService todoService;
 
-        public TodoController(DataContext context)
+        public TodoController(DataContext context, ITodoService todoService)
         {
             this.context = context;
+            this.todoService = todoService;
         }
 
         public IActionResult Create()
@@ -29,15 +31,13 @@ namespace TestAutomationCourse.SimpleTodo.Web.Controllers
         {
             if (!ModelState.IsValid)
                 return View();
-            var service = new TodoService(context);
-            service.AddTodo(model);
+            todoService.AddTodo(model);
             return RedirectToAction("List");
         }
 
         public IActionResult List()
         {
-            var service = new TodoService(context);
-            return View(service.GetAll());
+            return View(todoService.GetAll());
         }
     }
 }

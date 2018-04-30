@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TestAutomationCourse.SimpleTodo.Web.Domain
+namespace Phase3.SimpleTodo.Web.Domain
 {
     [Table("TodoItems")]
     public class TodoItem

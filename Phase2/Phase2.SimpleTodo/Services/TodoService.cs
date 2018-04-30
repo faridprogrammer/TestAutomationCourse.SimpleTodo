@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Phase2.SimpleTodo.Web.Domain;
+using Phase2.SimpleTodo.Web.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,10 +13,12 @@ namespace TestAutomationCourse.SimpleTodo.Web.Services
     public class TodoService
     {
         private readonly DataContext context;
+        private readonly INotificationService notificationService;
 
-        public TodoService(DataContext context)
+        public TodoService(DataContext context, INotificationService notificationService)
         {
             this.context = context;
+            this.notificationService = notificationService;
         }
         public void AddTodo(TodoDto input)
         {
@@ -26,7 +30,7 @@ namespace TestAutomationCourse.SimpleTodo.Web.Services
             validator.Validate(input);
 
             // refactor to mapper
-            var todoEntity = new Domain.TodoItem
+            var todoEntity = new TodoItem
             {
                 CreationDate = DateTime.Now,
                 Title = input.Title,
@@ -36,6 +40,8 @@ namespace TestAutomationCourse.SimpleTodo.Web.Services
 
             context.TodoItems.Add(todoEntity);
             context.SaveChanges();
+
+            notificationService.NotifyAddTodoItem();
         }
 
         public IEnumerable<TodoDto> GetAll()
